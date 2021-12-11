@@ -1,38 +1,166 @@
-.App {
-  text-align: center;
+html {
+  font-family: "Big Shoulders Inline Display", cursive;
+  font-family: "Noto Sans", sans-serif;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body {
+  margin: 0;
+  background-color: rgb(220, 217, 223);
+  scroll-behavior: smooth;
+  font-family: "Big Shoulders Inline Display";
+  border: 10px solid rgb(119, 0, 255);
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+a {
+  text-decoration: none;
+  color: black;
+}
+
+.container {
+  margin: 100px;
+  display: grid;
+  justify-content: space-around;
+  grid-template-columns: auto auto auto;
+}
+
+@media screen and (max-width: 800px) {
+  .container {
+    grid-template-columns: auto;
+  }
+
+  .story-card {
+    box-shadow: 0 0 20px 10px rgba(119, 0, 255, 0.2);
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+@media screen and (max-width: 1100px) and (min-width: 800px) {
+  .container {
+    grid-template-columns: auto auto;
+  }
+}
+
+.story-card {
+  margin: 30px 0;
+  width: 300px;
+  height: 360px;
+  transition: 100ms;
+  background-color: #fff;
+  border-radius: 10px;
+  padding-bottom: 20px;
+}
+
+.story-card:hover,
+.story-card:focus {
+  transform: scale(1.1);
+  z-index: 10;
+  box-shadow: 0 0 20px 10px rgba(119, 0, 255, 0.2);
+}
+
+.story-card img {
+  width: 300px;
+  height: auto;
+  max-height: 150px;
+  border-top-right-radius: 10px;
+  border-top-left-radius: 10px;
+}
+
+.story-card .no-image {
+  display: grid;
+  place-items: center;
+  width: 300px;
+  height: 150px;
+  background-color: rgb(119, 0, 255);
+  color: #fff;
+  border-top-right-radius: 10px;
+  border-top-left-radius: 10px;
+}
+
+.story-card h3,
+.story-card p {
+  margin-inline: 10px;
+}
+
+.story-card p {
+  margin-block: 5px;
+}
+
+.story-card hr {
+  margin: 20px;
+  padding-block: -10px;
+}
+
+.story-card p {
+  color: rgb(92, 92, 92);
+}
+
+.container-end {
+  display: grid;
+  width: 100%;
+  height: 300px;
+  font-size: 2rem;
+  justify-content: center;
+  background: linear-gradient(180deg, transparent, 50%, rgba(0, 0, 0, 0.6));
+}
+
+.header {
+  top: 0;
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  margin-top: 12px;
+  margin-bottom: -100px;
+  margin-inline: 50px;
+  border-radius: 15px;
+  background-color: rgb(119, 0, 255);
 }
 
-.App-link {
-  color: #61dafb;
+.header ul {
+  display: flex;
+  list-style-type: none;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.header li {
+  color: #fff;
+  font-size: 1.25rem;
+  margin-inline: 20px;
+}
+
+.header a {
+  text-decoration: none;
+  color: #fff;
+}
+
+#myBtn {
+  display: none; /* Hidden by default */
+  position: fixed; /* Fixed/sticky position */
+  bottom: 20px; /* Place the button at the bottom of the page */
+  right: 30px; /* Place the button 30px from the right */
+  aspect-ratio: 1;
+  z-index: 99; /* Make sure it does not overlap */
+  border: none; /* Remove borders */
+  outline: none; /* Remove outline */
+  background-color: rgb(119, 0, 255); /* Set a background color */
+  color: white; /* Text color */
+  cursor: pointer; /* Add a mouse pointer on hover */
+  padding: 15px; /* Some padding */
+  border-radius: 50%; /* Rounded corners */
+  font-size: 18px; /* Increase font size */
+  animation: fadeIn 1000ms;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
   }
-  to {
-    transform: rotate(360deg);
+  100% {
+    opacity: 1;
   }
+}
+
+#myBtn:hover {
+  background-color: #555; /* Add a dark-grey background on hover */
+}
+
+.dark-mode {
+  background-color: rgb(0, 0, 0);
 }
